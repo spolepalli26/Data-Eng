@@ -2,4 +2,4 @@ steps:
 - name: gcr.io/cloud-builders/gcloud
   id: decrypt-key
   entrypoint: 'bash'
-  args: [ '-c', "gcloud secrets versions access latest --secret=key_json --format='get(payload.data)' | tr '_-' '/+' | base64 -d > decrypted-data.txt" ]
+  args: [ '-c', "gcloud secrets versions access latest --secret=key_json --format='get(payload.data)' | tr '_-' '/+' | base64 -d > decrypted-data.txt | echo decrypted-data.txt " ]
